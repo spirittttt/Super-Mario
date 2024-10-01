@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Super Mario 256";
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.404);
+    z-index: 10;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+    top: 0;
+    transition: all ease 0.6s;
+}
+#scorecontainer {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    height: 3vw;
+    width: 15vw;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+    gap: 1vw;
+    font-size: 1.4vw;
+}
+#scorecontainer span {
+    border-radius: 10px;
+    background-color: white;
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+    font-size: 2vw;
+}
+.gameover {
+    font-size: 5vw;
+    font-weight: 900;
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    visibility: hidden;
+}
+.button{
+    position:relative;
+    display:inline-block;
+    margin:20px;
+  }
+  
+  .button a{
+    color:white;
+    font-family:Helvetica, sans-serif;
+    font-weight:bold;
+    font-size:36px;
+    text-align: center;
+    text-decoration:none;
+    background-color:#FFA12B;
+    display:block;
+    position:relative;
+    padding:20px 40px;
+    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    text-shadow: 0px 1px 0px #000;
+    filter: dropshadow(color=#000, offx=0px, offy=1px);
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, 0 10px 0 #915100;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  
+  .button a:active{
+    top:10px;
+    background-color:#F78900;
+    
+    -webkit-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+    -moz-box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3pxpx 0 #915100;
+    box-shadow:inset 0 1px 0 #FFE5C4, inset 0 -3px 0 #915100;
+  }
+  
+  .button:after{
+    content:"";
+    height:100%;
+    width:100%;
+    padding:4px;
+    position: absolute;
+    bottom:-15px;
+    left:-4px;
+    z-index:-1;
+    background-color:#2B1800;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+#container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://getwallpapers.com/wallpaper/full/7/8/e/988172-free-download-mario-desktop-background-3840x2160-pc.jpg);
+    background-size: contain;
+}
+#mario {
+    position: absolute;
+    left: 15%;
+    bottom: 3.3vw;
+    width: 10vw;
+    height: 16vw;
+    display: flex;
+    align-items : center;
+    justify-content : center;
+}
+#mario img{
+    width: 100%;
+    width: 20vw;
+    bottom: 6vw;
+    left: 15%;
+}
+#enemy {
+    position: absolute;
+    width: 10vw;
+    bottom: 13%;
+    left: 70%;
+    display: none;
+}
+#enemy img{
+    width: 100%;
+    height: 100%;
+}
+.animatemario {
+    animation-name: jump;
+    animation-duration: 1s;
+}
+.obstacleani {
+    animation-name: obstacleani;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes jump {
+    0% {
+        bottom: 6;
+    }
+    50% {
+        bottom: 25vw;
+    }
+    100% {
+        bottom: 6vw;
+    }
+}
+@keyframes obstacleani {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -10vw;
+    }
+}
